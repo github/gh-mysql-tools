@@ -23,7 +23,7 @@ This project is archived to indicate that it is not open to contributions. We ex
 
 # Contributing
 
-See [CONTRIBUTING](.github/CONTRIBUTING)
+See [CONTRIBUTING](.github/CONTRIBUTING.md)
 
 # License
 
