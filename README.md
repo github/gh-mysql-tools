@@ -10,17 +10,21 @@ To be able to publish these tools, we strip out GitHub-specific code (e.g. integ
 
 # The tools
 
-### gh-mysql-rewind
+## gh-mysql-rewind
 
 Move MySQL back in time, decontaminate or un-split brain a MySQL server, restore it into replication chain.
 
 [Read more](rewind/)
 
 
-### Project status
+# Project status
 
 This project is archived to indicate that it is not open to contributions. We expect to be updating it from time to time. We may be open to contributions at some point in the future.
 
-### License
+# Contributing
+
+See [CONTRIBUTING](.github/CONTRIBUTING)
+
+# License
 
 This project is released under the [MIT LICENSE](LICENSE).
