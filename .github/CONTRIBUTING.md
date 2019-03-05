@@ -4,7 +4,7 @@ Hi there!
 
 At this time the project is not open to contributions. This is subject to change.
 
-Whether open or not, this project adheres to the [Open Code of Conduct](http://todogroup.org/opencodeofconduct/#gh-mysql-tools/opensource@github.com). By participating, you are expected to uphold this code.
+Whether open or not, this project adheres to the [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
 
 ## Submitting a pull request
 
