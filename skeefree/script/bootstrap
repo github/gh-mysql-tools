@@ -1,0 +1,23 @@
+#!/bin/bash
+if [ "$(uname -s)" = "Darwin" ]; then
+  mkdir -p tmp
+
+  brew bundle &> tmp/brew-bundle.log || (
+      echo "Failed to brew bundle:"
+      cat tmp/brew-bundle.log
+  )
+
+  if [[ ! -x "$(which go)" ]]; then
+    echo >&2 "skeefree requires an installation of Go to build."
+    exit 1
+  fi
+
+  if [[ ! -x "$(which docker)" ]]; then
+    echo >&2 "skeefree requires an installation of Docker to run."
+    exit 1
+  fi
+
+
+fi
+
+docker build -f Dockerfile.build -t skeefree:$(script/revision) .

@@ -1,0 +1,19 @@
+#!/bin/bash -e
+
+script/build
+
+INTERNAL_ADDR="$(hostname):8080"
+export INTERNAL_ADDR
+
+CHATOPS_AUTH_PUBLIC_KEY=""
+export CHATOPS_AUTH_PUBLIC_KEY
+
+CHATOPS_TEST_PRIVATE_KEY_PATH=""
+export CHATOPS_TEST_PRIVATE_KEY_PATH
+
+CHATOPS_AUTH_BASE_URL="http://$(hostname):8080"
+export CHATOPS_AUTH_BASE_URL
+
+echo "Booting server on ${INTERNAL_ADDR}..."
+ls
+$(pwd)/bin/skeefree
