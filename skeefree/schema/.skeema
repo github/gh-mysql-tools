@@ -1,0 +1,7 @@
+# `skeema-diff-ci` is used by `skeema-diff` Action, see .github/workflows/skeema-diff.yml
+# It runs on a GitHub Action image, which implicitly contains a MySQL server.
+#
+[skeema-diff-ci]
+host=127.0.0.1
+port=3306
+user=root

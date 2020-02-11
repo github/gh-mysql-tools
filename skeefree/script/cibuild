@@ -1,0 +1,12 @@
+#!/bin/bash
+set -exu
+DOCKER_IMAGE=`docker build --tag myorg/skeefree:1.0 --rm -f Dockerfile.build .`
+
+PROJECT_WORKDIR="/go/src/github.com/myorg/skeefree"
+docker run --rm \
+  -v $(pwd):"$PROJECT_WORKDIR" \
+  --workdir "$PROJECT_WORKDIR" \
+  -e GOBIN="$PROJECT_WORKDIR/bin/" \
+  -e GOPATH="/go" \
+  "myorg/skeefree:1.0" \
+  /bin/sh -c "$PROJECT_WORKDIR/script/test"

@@ -1,0 +1,8 @@
+set -e
+#!/bin/bash
+
+go install -ldflags="-X main.BuildVersion=$(script/revision)" github.com/myorg/skeefree/...
+mkdir -p bin
+hostname
+
+cp -v "$GOPATH/bin/skeefree" bin/skeefree

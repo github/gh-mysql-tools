@@ -1,0 +1,29 @@
+#!/bin/bash
+
+set -ex
+
+# Move stdout to fh 3, and dup stderr to stdout, so that the tar at the end can do the right thing
+exec 3>&1 1>&2
+
+if [ -z "$JANKY_SHA1" ]; then
+  echo error: JANKY_SHA1 must be set
+  exit 1
+fi
+
+go version
+
+export CGO_ENABLED=0
+
+mkdir -p /release
+
+script/build
+
+rm -rf tmp
+mkdir tmp
+chmod 777 tmp
+
+tar cfv /dev/fd/3 \
+  Dockerfile.release \
+  /go/bin \
+  tmp \
+  /etc/ssl/certs/ca-certificates.crt \

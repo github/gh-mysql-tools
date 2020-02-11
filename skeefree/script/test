@@ -1,0 +1,19 @@
+#!/bin/bash
+
+
+echo "Verifying code is formatted via 'gofmt -s -w  go/'"
+gofmt -s -w  go/
+git diff --exit-code --quiet
+
+echo "Building"
+./script/build
+set -e
+
+
+# If gotest exists, colorize the output.
+if [ -f $GOBIN/gotest ]
+then
+  gotest -v github.com/myorg/skeefree/go/...
+else
+  go test -v github.com/myorg/skeefree/go/...
+fi

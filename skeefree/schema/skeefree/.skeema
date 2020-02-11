@@ -1,0 +1,5 @@
+# Skeefree eats its own dog food, and has `.skeema` settings and `skeefree` directives.
+# The prefix `skeema:` is ignored (any prefix with colon is ignored). It is used to make it explicit that the schema is never an actual production schema.
+# The suffix, `skeefree_production` is the actual name of the schema in production.
+[skeema-diff-ci]
+schema=skeema:skeefree_production

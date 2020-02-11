@@ -1,0 +1,16 @@
+environments:
+- name: production
+  secret_source: redacted
+  secret_name: skeefree
+  cluster_strategy: redacted
+  clusters:
+  - redacted
+- name: staging
+  secret_source: redacted
+  secret_name: skeefree
+  cluster_strategy: redacted
+  clusters:
+  - redacted
+notifications:
+  slack_channels:
+  - "#redacted"

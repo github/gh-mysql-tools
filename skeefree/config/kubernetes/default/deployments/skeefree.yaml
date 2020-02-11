@@ -1,0 +1,27 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: skeefree
+  annotations:
+    redacted: "skeefree"
+    redacted: "skeefree"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: skeefree
+  template:
+    metadata:
+      labels:
+        app: skeefree
+    spec:
+      containers:
+      - name: skeefree
+        image: skeefree
+        env:
+          - name: HTTP_ADDR
+            value: ":8080"
+        ports:
+        - name: http
+          containerPort: 8080
+          protocol: TCP
