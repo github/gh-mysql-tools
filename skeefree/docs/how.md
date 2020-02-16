@@ -11,7 +11,7 @@ Some of the operations depicted in the above are best dealt with using designate
 
 As result, the complete flow is not owned by any single process. The flow is a coordination of efforts by multiple processes, communicating with each other in different ways. There are three main actors in the flow:
 
-- [skeema-diff](how-action.md): a GitHub Action utilizing [skeefree](https://github.com/skeema/skeema) to generate diff statements and annotate with labels
+- [skeema-diff](how-action.md): a GitHub Action utilizing [skeema](https://github.com/skeema/skeema) to generate diff statements and annotate with labels
 - [skeefree](how-skeefree.md): this repo, acting as the controller; detects PRs, puts context to the migration, runs the migrations, provides visibility and control via chatops.
 - [gh-ost](how-gh-ost.md): our schema migration tool, uses a `skeefree` binary together with hooks, to read schema migration assignments, execute and update status.
 

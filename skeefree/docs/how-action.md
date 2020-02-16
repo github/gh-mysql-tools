@@ -38,7 +38,8 @@ As result, an action has no access to our production databases, to the `skeefree
   - Right now `skeema` runs from within the Action scope, and obviously cannot run anything in production, let alone multi-day migrations.
   - If we were to then extract `skeema` from Actions and run it from the outside, we'd be duplicating flow.
   - We'd still be unable to run `skeema` on our `k8s` servers: remember, schema changes can run for hours and days.
-  - Last, we want to be able to run concurrent migrations (on different clusters), and to schedule migrations; so, much of the logic we already need to take care of, ourselves.
+  - We want to be able to run concurrent migrations (on different clusters), and to schedule migrations; so, much of the logic we already need to take care of, ourselves.
+  - We were building on top of already-existing-and-proven infrastructure. If we were to build `skeefree` from scratch, the design may have been different.
 - Entirely possible `skeema` offers something more that we could use, but the above illustrates how we got here.
 
 And so we only use `skeema` up to the point it generates _diff_ statements. This is no small feat. `skeema` is doing this job fantastically:
