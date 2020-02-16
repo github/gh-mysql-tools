@@ -34,7 +34,7 @@ As result, an action has no access to our production databases, to the `skeefree
 
 `skeema` is an actively developed open source tool. It's objective is to operate schema management cycles. It can both diff schema changes as well as apply them. However:
 
-- While it integrates with `pt-online-schema-change` it does not (yet) integrate with `gh-ost`. While we could write the integration it doesn't follow that we'd want `skeema` to be the one to run `gh-ost`.
+- `skeema` integrates with `pt-online-schema-change` and with `gh-ost`. However, we do not use `skeema` to invoke `gh-ost`.
   - Right now `skeema` runs from within the Action scope, and obviously cannot run anything in production, let alone multi-day migrations.
   - If we were to then extract `skeema` from Actions and run it from the outside, we'd be duplicating flow.
   - We'd still be unable to run `skeema` on our `k8s` servers: remember, schema changes can run for hours and days.
